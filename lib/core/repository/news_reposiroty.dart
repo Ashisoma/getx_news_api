@@ -1,4 +1,6 @@
+import 'package:getx_news_api/core/models/article.dart';
+
 abstract class NewsRepos {
-  Future getNewsHealdine();
-  Future getSearchedNews(String searchTerm);  
+  Future<List<Article>> getNewsHealdine();
+  Future<List<Article>> getSearchedNews(String searchTerm);  
 }
