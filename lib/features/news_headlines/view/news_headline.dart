@@ -25,15 +25,34 @@ class NewsHeadline extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Column(
                         children: [
-                          Image.network(controller.articles[index].urlToImage),
-                          const SizedBox(height: 8,),
-                          Text(controller.articles[index].title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),),
-                          const SizedBox(height: 8,),
-                          Text(controller.articles[index].author, style:TextStyle(fontSize: 16, fontWeight: FontWeight.w300)),
-                          const SizedBox(height: 4,),
-                          Text(controller.articles[index].description, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),)
+                          controller.articles[index].urlToImage == null
+                              ? Container()
+                              : Image.network(
+                                  controller.articles[index].urlToImage),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            controller.articles[index].title,
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w300),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Text(controller.articles[index].author,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w300)),
+                          const SizedBox(
+                            height: 4,
+                          ),
+                          Text(
+                            controller.articles[index].description,
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w300),
+                          )
                         ],
-                      ); 
+                      );
                     },
                     separatorBuilder: (context, index) => Divider(),
                     itemCount: controller.articles.length),
